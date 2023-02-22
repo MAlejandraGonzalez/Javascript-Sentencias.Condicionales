@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentencias Condicionales</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <script>
+
+        //NOS PERMITEN DECIDIR SI UN BLOQUE DE CODIGO SE EJECUTA O NO 
+        //PARA ESCRIBIR UN CONDICIONAL LO PRIMERO QUE ESCRIBIMOSES LA PALABRA CLAVE IF 
+
+
+
+        var x = 5; 
+
+        if(x > 2 && x < 10) {
+
+            console.log("La condicion es verdadera.");
+        }
+
+        var estacion = "Invierno";
+
+        if(estacion == "Invierno"){
+
+
+            console.log("Si! me encanta el invierno");
+        }
+
+        console.log("Despues del condicional");
+
+        //CLAUSULA ELSE
+        
+        var x = 5 ;
+
+        if(x < 2){
+
+            console.log("La condicion es verdadera");
+
+        }else{
+
+            console.log("La condicion es falsa");
+        
+        }
+
+        var estacion = "invierno"
+        if(estacion === "Verano"){
+
+            console.log("Comenzo el verano , ya podemos ir a la playa");
+        }else{
+
+            console.log("Ya quiero que llegue el verano para poder ir a la playa");
+        }
+
+        //CLAUSULA ELSE IF 
+
+        function clasificarValor(Valor){
+
+            if(Valor % 2 == 0){
+
+                console.log("Divisible entre 2");
+            }else if(Valor % 3 == 0){
+
+                console.log("Divisible entre 3");
+            }else{
+
+                console.log("No es divisible entre las opciones");
+            }
+        }
+
+        //SOLO UN BLOQUE DE CODIGO SE EJECUTA 
+
+        //CONDICIONALES : ORDEN LOGICO 
+
+        function clasificarValor(valor){
+
+            if (valor < 5){
+
+                console.log("Menor que 5.");
+            }else if (valor < 10){
+
+                console.log("Menor que 10.");
+            }else{
+
+                console.log("Mayor o igual a 10.");
+            }
+         }
+
+         clasificarValor(15);
+
+         //ENCADENAR SENTENCIAS IF... else 
+
+         function interpretarIMC(indiceDeMasaCorporal){
+
+            if(indiceDeMasaCorporal < 18.5){
+
+                console.log("Bajo peso");
+            }else if(indiceDeMasaCorporal <= 24.9){
+
+                console.log("Normal");
+            }else if (indiceDeMasaCorporal <= 29.9){
+
+                console.log("SobrePeso");
+            }else{
+
+                console.log("Obeso");
+            }
+         }
+
+         interpretarIMC(32.2);
+
+         //CODIGO DE GOLF 
+
+         /* 
+         En el juego de golf cada hoyo tiene un par que representa el numero promedio de golpes
+         que se espera que haga cada golfista para introducir la pelota en el hoyo
+
+         Hay un nombre diferente dependiendo de que tan por encima o por debajo del par esten tus golpes
+
+         Tu funcion tomara los argumentos par y golpes .
+
+         Retorna la cadena correcta segun esta tabla que muestra 
+         los golpes en orden de mayor a menor prioridad:
+
+         par y golpes siempre seran numericos y positivos
+         */ 
+
+         function puntajeDeGolf (par , golpes){
+
+            if(golpes == 1){
+
+                return "Hole-in-one!";
+            }else if (golpes <= par - 2 ){
+
+                return "Eagle";
+            }else if (golpes == par - 1){
+
+                return "Birdie";
+
+            }else if (golpes == par ){
+
+                return "Par";
+            }else if (golpes == par + 1){
+
+                return "Bogey";
+
+            }else if (golpes == par + 2){
+
+                return "Double Bogey";
+
+            }else if (golpes >= par + 3){
+
+                return "Go Home!";
+            }
+         }
+
+         console.log(puntajeDeGolf(4 , 6));
+
+         //SENTENCIAS SWITCH 
+
+         // BREAK DETIENE EL BLOQUE DE EJECUCION DEL CODIGO 
+
+         function clasificarValor(valor){
+
+            var respuesta;
+            switch (valor){
+
+                case 1 :
+                    respuesta = "alpha";
+                    break;
+
+                    case 2: 
+                    respuesta = "beta";
+                    break;
+
+                    case 3: 
+                    respuesta = "Gama";
+                    break;
+
+                    case 4:
+                        respuesta = "Delta";
+                        break;
+            }
+
+            return respuesta;
+        
+        }
+
+        console.log (clasificarValor(2));
+
+        var producto = "pizza";
+
+        switch (producto){
+
+            case "pizza":
+                console.log("La pizza basica cuesta $10.55");
+                break;
+
+                case "hamburguesa":
+                console.log("Las hamburguesas cuestan $6.78");
+                break;
+
+                case "helado": 
+                console.log("El helado cuesta $2.78");
+                break;
+            }
+
+            console.log("Luego de switch");
+
+            //SENTENCIA SWITCH : OPCION PREDETERMINADA 
+
+            function seleccionarIdioma(valor){
+
+                var idioma;
+                switch (valor){
+
+                    case 1: 
+                    idioma = "Español";
+                    break;
+
+                    case 2:
+                        idioma = "Frances";
+                        break;
+
+                        case 3:
+                            idioma = "Italiano";
+                            break;
+
+                            default:
+                                idioma = "Ingles";
+                                break;
+                }
+
+                return idioma;
+            }
+
+            console.log(seleccionarIdioma(4));
+
+            //SENTENCIAS SWITCH MULTIPLES CASOS 
+
+            function clasificarVolumen (valor){
+                var volumen;
+
+                switch (valor){
+
+                    case 1 :
+                        volumen = "bajo";
+                        break;
+
+                        case 2: 
+                        case 3: 
+                        volumen = "intermedio";
+                        break;
+
+                        case 4:
+                        case 5:
+                        case 6: 
+                        volumen = "Alto";
+                        break;
+                }
+
+                return volumen;
+            }
+
+            console.log(clasificarVolumen(1));
+
+            //REEMPLAZAR IF ELSE POR SWITCH 
+
+            function seleccionarIdioma(valor){
+
+                var idioma;
+               switch (valor){
+
+                case 1: 
+
+                idioma = "Español";
+                break;
+                case 2:
+                    idioma = "Frances";
+                    break;
+
+                    case 3:
+                        idioma = "Italiano";
+                        break;
+
+                        default: 
+                        idioma = "Ingles";
+                        break;
+                    
+                    }
+
+                return idioma;
+            }
+
+            //RETORNAR VALORES BOOLEANOS
+
+            function esMenorQue(a , b){
+
+                return a < b;
+            
+            }
+
+            console.log(esMenorQue(2 , 3));
+
+            //PATRON DE RETORNO ANTICIPADO
+
+            function calcularRaizCuadrada (num) {
+
+                if (num < 0) {
+
+                    return undefined;
+                }
+
+                return Math.sqrt (num);
+            
+            
+            }
+
+            console.log(calcularRaizCuadrada(25));
+
+            //MINI PROYECTO CONTEO DE CARTAS 
+
+            /* Descripcion:
+
+            En el juego de casino black jack el jugador puede sacarle ventaja a la casa 
+            llevando un registro del numero relativo de cartas altas y bajas que quedan en la varaja.
+
+            Esto se llama conteo de cartas.
+
+            Tener mas cartas altas en la baraja es una vetaja para el jugador. Se le asigna un valor a cada carta
+            de acuerdo a la siguiente tabla.
+
+            -Cuando el conteo es positivo , el jugador deberia apostar alto.
+            - Cuando el conteo es 0 o negativo , el jugador deberia apostar bajo.
+
+            Nuestra meta es definir una funcion para contar cartas
+
+            */
+
+            var conteo = 0;
+
+            function contarCartas (carta) {
+
+                var decision;
+
+                 switch (carta){
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6: 
+                    conteo++;
+
+                    break;
+
+                    case 10: 
+                    case "j":
+                    case "Q":
+                    case "K":
+                    case "A": 
+                    conteo--;
+
+                    break;
+                
+                }
+
+                if (conteo > 0){
+
+                    decision = "Apostar";
+                }else{
+
+                    decision = "Eperar";
+                }
+
+                return conteo + " " + decision;
+            }
+
+            console.log(contarCartas(2));
+            console.log(contarCartas(3));
+            console.log(contarCartas(7));
+            console.log(contarCartas("K"));
+            console.log(contarCartas("A"));
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
